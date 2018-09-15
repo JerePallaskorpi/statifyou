@@ -1,1 +1,3 @@
-statifyou
+## Statifyou
+Track your spotify plays.
+

@@ -1,6 +1,5 @@
 // @flow
 import React, { Component, Fragment } from 'react';
-import queryString from 'query-string';
 import { getUserData } from '../../../api/auth/getUserData';
 import Login from '../login/Login';
 import TopListContainer from '../top-list/TopListContainer';
@@ -16,8 +15,8 @@ class Home extends Component<Props, null> {
     componentDidMount() {
         const { setAccessToken, setUserData } = this.props;
 
-        const params = queryString.parse(window.location.search);
-        const accessToken = params.access_token;
+        const params = (new URL(document.location)).searchParams;
+        const accessToken = params.get('access_token');
         if (accessToken) {
             setAccessToken(accessToken);
             getUserData(accessToken)

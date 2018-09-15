@@ -3,6 +3,7 @@ import React, { Component, Fragment } from 'react';
 import queryString from 'query-string';
 import { getUserData } from '../../../api/auth/getUserData';
 import Login from '../login/Login';
+import TopListContainer from '../top-list/TopListContainer';
 
 type Props = {
     accessToken: string,
@@ -33,7 +34,7 @@ class Home extends Component<Props, null> {
 
         return (
             <Fragment>
-                <p>You are logged in as {user.id} ({user.email})</p>
+                <TopListContainer />
             </Fragment>
         );
     }

@@ -1,6 +1,5 @@
 // @flow
 import React, { Component } from 'react';
-import { getSpotifyAuth } from '../../../api/auth/getSpotifyAuth';
 import LoginView from './LoginView';
 
 type Props = {
@@ -25,7 +24,7 @@ class Login extends Component<Props, State> {
     }
 
     loginButton = () => {
-        getSpotifyAuth();
+        window.location.replace('/api/login')
     };
 
     render() {

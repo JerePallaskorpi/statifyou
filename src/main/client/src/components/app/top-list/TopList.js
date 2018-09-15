@@ -1,6 +1,5 @@
 // @flow
 import React, { Component } from 'react';
-import { getSpotifyAuth } from '../../../api/auth/getSpotifyAuth';
 import { getTopArtists } from '../../../api/topLists/artists';
 import TopListView from './TopListView';
 
@@ -21,8 +20,6 @@ class TopList extends Component<Props, State> {
         super(props);
 
         this.state = { ...initialState };
-
-        this.loginButton = this.loginButton.bind(this);
     }
 
     componentDidMount() {
@@ -32,14 +29,8 @@ class TopList extends Component<Props, State> {
             .then(r => this.setState({ artists: r.items }));
     }
 
-    loginButton = () => {
-        getSpotifyAuth();
-    };
-
     render() {
         const { artists } = this.state;
-
-        console.log(artists);
 
         return <TopListView artists={artists} />;
     }

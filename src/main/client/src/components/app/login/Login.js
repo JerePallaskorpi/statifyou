@@ -1,6 +1,7 @@
 // @flow
 import React, { Component } from 'react';
 import { getSpotifyAuth } from '../../../api/auth/getSpotifyAuth';
+import LoginView from './LoginView';
 
 type Props = {
     /* ... */
@@ -28,7 +29,7 @@ class Login extends Component<Props, State> {
     };
 
     render() {
-        return <button onClick={this.loginButton}>Login</button>;
+        return <LoginView loginButton={this.loginButton} />;
     }
 }
 

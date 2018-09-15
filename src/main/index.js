@@ -2,9 +2,13 @@ const express = require('express');
 const request = require('request');
 const querystring = require('querystring');
 const cors = require('cors');
+const path = require('path');
 
 const app = express();
 app.use(cors());
+
+// Serve static files from the React frontend app
+app.use(express.static(path.join(__dirname, 'client/build')))
 
 const redirectUri = process.env.REDIRECT_URI || 'http://localhost:8888/api/callback';
 
@@ -37,6 +41,10 @@ app.get('/api/callback', (req, res) => {
         const uri = process.env.FRONTEND_URI || 'http://localhost:3000';
         res.redirect(`${uri}?access_token=${accessToken}`);
     });
+});
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(`${__dirname}/client/build/index.html`));
 });
 
 const port = process.env.PORT || 8888;

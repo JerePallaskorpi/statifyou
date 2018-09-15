@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "query-string": "^6.1.0",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
     "react-redux": "^5.0.7",
@@ -46,6 +47,12 @@
     "testURL": "http://localhost/",
     "moduleNameMapper": {
       "\\.(css|less|scss|sass)$": "identity-obj-proxy"
+    }
+  },
+  "proxy": {
+    "/api": {
+      "target": "http://localhost:8888",
+      "testURL": "http://localhost/"
     }
   }
 }

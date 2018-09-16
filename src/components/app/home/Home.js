@@ -1,6 +1,7 @@
 // @flow
 import React, { Component, Fragment } from 'react';
 import { getUserData } from '../../../api/auth/getUserData';
+import HeaderContainer from '../header/HeaderContainer';
 import Login from '../login/Login';
 import TopListContainer from '../top-list/TopListContainer';
 
@@ -25,15 +26,23 @@ class Home extends Component<Props, null> {
     }
 
     render() {
-        const { accessToken, user } = this.props;
+        const { accessToken, user, setAccessToken } = this.props;
 
         if (!accessToken) {
-            return <Login />;
+            return (
+                <Fragment>
+                    <HeaderContainer user={user} setAccessToken={setAccessToken} />
+                    <Login />
+                </Fragment>
+            );
         }
 
         return (
             <Fragment>
-                <TopListContainer />
+                <HeaderContainer user={user} setAccessToken={setAccessToken} />
+                <div style={{ maxWidth: '700px', margin: 'auto' }}>
+                    <TopListContainer />
+                </div>
             </Fragment>
         );
     }

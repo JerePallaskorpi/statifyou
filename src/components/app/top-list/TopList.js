@@ -1,6 +1,6 @@
 // @flow
 import React, { Component } from 'react';
-import { getTopArtists } from '../../../api/topLists/artists';
+import { getUserTopList } from '../../../api/topLists/topList';
 import TopListView from './TopListView';
 
 type Props = {
@@ -12,7 +12,7 @@ type State = {
 };
 
 const initialState = {
-    artists: [],
+    items: [],
 };
 
 class TopList extends Component<Props, State> {
@@ -25,14 +25,16 @@ class TopList extends Component<Props, State> {
     componentDidMount() {
         const { accessToken } = this.props;
 
-        getTopArtists(accessToken)
-            .then(r => this.setState({ artists: r.items }));
+        getUserTopList(accessToken, 'medium_term', 'tracks')
+            .then(r => this.setState({ items: r.items }));
     }
 
     render() {
-        const { artists } = this.state;
+        const { items } = this.state;
 
-        return <TopListView artists={artists} />;
+        console.log(items);
+
+        return <TopListView items={items} />;
     }
 }
 

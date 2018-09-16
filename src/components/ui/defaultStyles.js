@@ -7,6 +7,9 @@ export const colorLight = '#FFFFFF';
 
 export const colorMainHighlight = '#1da552';
 
+// Others
+export const shadowDefault = '0 2px 4px 0 hsla(0, 0%, 0%, 0.4)';
+
 // Global Styles
 injectGlobal`
   body {
@@ -15,7 +18,6 @@ injectGlobal`
     font-size: 16px;
     background: ${colorDark};
     color: ${colorLight};
-    max-width: 700px;
 
     input, select, textarea, button {
         font-family: inherit;

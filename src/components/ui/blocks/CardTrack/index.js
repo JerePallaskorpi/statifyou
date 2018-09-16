@@ -3,6 +3,10 @@ import styled from 'styled-components';
 const CardTrack = styled.div`
     width: 150px;
     padding: 12.5px;
+    
+    @media only screen and (max-width: 568px) {
+        width: calc(150px - 2em);
+    }
 `;
 
 const Name = styled.div`
@@ -21,10 +25,17 @@ const Image = styled.div`
         width: 100%;
         height: 100%;
     }
+    
+    @media only screen and (max-width: 568px) {
+        width: calc(150px - 2em);
+        height: calc(150px - 2em);
+    }
 `;
 
 const Artist = styled.div`
     color: gray;
+    overflow: hidden;
+    text-overflow: ellipsis;
 `;
 
 const Track = styled.div`

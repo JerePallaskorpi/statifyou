@@ -53,7 +53,7 @@ class TopList extends Component<Props, State> {
                 break;
             case 2:
                 timeRange = 'medium_term';
-                timeRangeText = '6 Month';
+                timeRangeText = '6 Months';
                 break;
             case 3:
                 timeRange = 'long_term';

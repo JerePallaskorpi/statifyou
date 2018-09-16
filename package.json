@@ -3,6 +3,10 @@
     "version": "1.0.0",
     "description": "Spotify play stats",
     "scripts": {
+        "start": "cd client && npm start",
+        "build": "cd client && npm build",
+        "test": "cd client && react-scripts test --env=jsdom",
+        "eject": "cd client && npm eject",
         "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
     },
     "author": "Jere Pallaskorpi",

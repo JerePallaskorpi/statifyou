@@ -1,19 +1,20 @@
 {
-  "name": "react-starter-kit",
-  "version": "0.1.0",
+  "name": "statifyou-client",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "query-string": "^6.1.0",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
     "redux": "^4.0.0",
-    "styled-components": "^3.4.6"
+    "request": "^2.88.0",
+    "styled-components": "^3.4.6",
+    "react-scripts": "^1.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && jest -u",
+    "build": "react-scripts build",
     "test": "jest -u",
     "eject": "react-scripts eject",
     "flow": "flow"
@@ -38,7 +39,6 @@
     "flow-bin": "^0.70.0",
     "jest": "^23.6.0",
     "jest-styled-components": "^6.2.0",
-    "react-scripts": "^1.1.4",
     "react-test-renderer": "^16.5.1",
     "sinon": "^4.1.5"
   },

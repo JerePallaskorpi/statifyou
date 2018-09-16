@@ -24,7 +24,9 @@ class Login extends Component<Props, State> {
     }
 
     loginButton = () => {
-        window.location.replace('/api/login')
+        window.location = window.location.href.includes('localhost')
+            ? 'http://localhost:8888/api/login'
+            : 'https://statifyou-api.herokuapp.com/api/login'
     };
 
     render() {

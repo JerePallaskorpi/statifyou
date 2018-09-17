@@ -9,7 +9,7 @@ const HeaderContainer = ({ user, setAccessToken }) => (
         <div>
             <span>{user.id ? user.id : ''}</span>
         </div>
-        <div onClick={() => { setAccessToken(null); }}>
+        <div onClick={() => { setAccessToken(null); window.location = '/'; }}>
             <span>{user.email && 'Logout'}</span>
         </div>
     </Header>

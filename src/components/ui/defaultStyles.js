@@ -8,7 +8,7 @@ export const colorLight = '#FFFFFF';
 export const colorMainHighlight = '#1da552';
 
 // Others
-export const shadowDefault = '0 2px 4px 0 hsla(0, 0%, 0%, 0.4)';
+export const shadowDefault = '0 2px 6px 0 hsla(0, 0%, 0%, 0.6)';
 
 // Global Styles
 injectGlobal`

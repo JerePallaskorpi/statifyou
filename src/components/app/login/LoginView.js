@@ -10,7 +10,6 @@ type Props = {
 const LoginView = ({ handleLoginClick }: Props) => (
     <Fragment>
         <LoginWrapper>
-            <p>Login to see your spotify plays</p>
             <Button onClick={handleLoginClick}>Login</Button>
         </LoginWrapper>
     </Fragment>

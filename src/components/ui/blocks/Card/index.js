@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import * as styles from '../../defaultStyles';
 
 const Card = styled.div`
     width: 150px;
@@ -22,9 +23,11 @@ const Image = styled.div`
     width: 150px;
     height: 150px;
     
-    img {
-        width: 100%;
-        height: 100%;
+    
+    &:hover {
+        img {
+            opacity: 0.1;
+        }
     }
     
     @media only screen and (max-width: 768px) {
@@ -51,10 +54,48 @@ const Track = styled.div`
     padding-bottom: 0.5em;
 `;
 
+const Preview = styled.div`
+    position: absolute;
+    height: 150px;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    color: white;
+    opacity: 0;
+    transition: 0.3s;
+    
+    ${props => props.playing && css`
+        opacity: 1;
+    `}
+    
+    &:hover {
+        opacity: 1;
+        cursor: pointer;
+    }
+`;
+
+const Img = styled.img`
+    width: 150px;
+    height: 150px;
+    -webkit-box-shadow: ${styles.shadowListImage};
+    -moz-box-shadow: ${styles.shadowListImage};
+    box-shadow: i${styles.shadowListImage};
+    position: absolute;
+    transition: 0.3s;
+    
+    ${props => props.playing && css`
+        opacity: 0.1;
+    `}
+`;
+
 Card.Name = Name;
 Card.Name.Artist = Artist;
 Card.Name.Track = Track;
 Card.Name.Track.Artist = TrackArtist;
 Card.Image = Image;
+Card.Image.Preview = Preview;
+Card.Image.Img = Img;
 
 export default Card;

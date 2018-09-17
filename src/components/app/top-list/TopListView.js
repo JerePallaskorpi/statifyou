@@ -11,8 +11,9 @@ import TrackSingleView from './track-single/TrackSingleView';
 type Props = {
     items: Array<Object>,
     settings: Object,
-    handleTimeRangeChange: Function,
-    handleTypeClick: Function,
+    handleTimeRangeChange: () => void,
+    handleTypeClick: () => void,
+    handlePreviewClick: (id: string) => void,
 };
 
 const TopListView = ({
@@ -20,6 +21,8 @@ const TopListView = ({
     settings,
     handleTimeRangeChange,
     handleTypeClick,
+    handlePreviewClick,
+    playing,
 }: Props) => (
     <Fragment>
         <TopListSettings>
@@ -44,7 +47,7 @@ const TopListView = ({
         </TopListSettings>
         <TopListOverflow>
             <TopListWrapper>
-                {items.length > 0 && settings.type === 'tracks' && items.map(item => <TrackSingleView item={item} />)}
+                {items.length > 0 && settings.type === 'tracks' && items.map(item => <TrackSingleView item={item} handlePreviewClick={handlePreviewClick} playing={playing} />)}
                 {items.length > 0 && settings.type === 'artists' && items.map(item => <ArtistSingleView item={item} />)}
             </TopListWrapper>
         </TopListOverflow>

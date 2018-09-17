@@ -14,7 +14,7 @@ const ArtistSingleView = ({ item }: Props) => (
             </Card.Name.Artist>
         </Card.Name>
         <Card.Image>
-            <img alt={item.name} src={item.images && item.images[1].url} />
+            <Card.Image.Img alt={item.name} src={item.images && item.images[1].url} />
         </Card.Image>
     </Card>
 );

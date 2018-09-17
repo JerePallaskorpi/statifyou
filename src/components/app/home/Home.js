@@ -15,7 +15,6 @@ type Props = {
 class Home extends Component<Props, null> {
     componentDidMount() {
         const { setAccessToken, setUserData } = this.props;
-
         const params = (new URL(document.location)).searchParams;
         const accessToken = params.get('access_token');
         if (accessToken) {

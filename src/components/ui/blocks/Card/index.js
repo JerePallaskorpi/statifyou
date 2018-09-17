@@ -6,7 +6,7 @@ const Card = styled.div`
     padding: 12.5px;
     
     @media only screen and (max-width: 768px) {
-        width: calc(100% - 2em);
+        width: calc(300px - 2rem);
         padding: 1em;
     }
 `;
@@ -31,8 +31,8 @@ const Image = styled.div`
     }
     
     @media only screen and (max-width: 768px) {
-        width: calc(300px - 2em);
-        height: calc(300px - 2em);
+        width: calc(300px - 2rem);
+        height: calc(300px - 2rem);
     }
 `;
 
@@ -74,6 +74,11 @@ const Preview = styled.div`
         opacity: 1;
         cursor: pointer;
     }
+    
+    @media only screen and (max-width: 768px) {
+        width: calc(300px - 2rem);
+        height: calc(300px - 2rem);
+    }
 `;
 
 const Img = styled.img`
@@ -87,7 +92,12 @@ const Img = styled.img`
     
     ${props => props.playing && css`
         opacity: 0.1;
-    `}
+    `};
+    
+    @media only screen and (max-width: 768px) {
+        width: calc(300px - 2rem);
+        height: calc(300px - 2rem);
+    }
 `;
 
 Card.Name = Name;

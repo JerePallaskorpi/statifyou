@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import * as styles from '../../defaultStyles';
 
 const TopListSettings = styled.div`
-    width: calc(100% - 2em);
+    width: calc(100% - 2rem);
     display: flex;
     align-items: center;
     padding: 0 1em;
@@ -18,7 +18,7 @@ const Buttons = styled.div`
     padding: 1em;
     
     button {
-        width: calc(50% - 2em);
+        width: calc(50% - 2rem);
     }
     
     @media only screen and (max-width: 768px) {

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import * as styles from '../../defaultStyles';
 
 const Header = styled.div`
-    width: calc(100% - 2em);
+    width: calc(100% - 2rem);
     height: 50px;
     background: ${styles.colorDark};
     -webkit-box-shadow: ${styles.shadowDefault};

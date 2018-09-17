@@ -1,5 +1,5 @@
 // @flow
-import { SET_ACCESS_TOKEN } from '../../constants/actionTypes';
+import { SET_ACCESS_TOKEN, RESET_USER_DATA } from '../../constants/actionTypes';
 
 const initialState = null;
 
@@ -14,6 +14,8 @@ export default (state: State = initialState, action: Action) => {
     switch (action.type) {
         case SET_ACCESS_TOKEN:
             return action.accessToken;
+        case RESET_USER_DATA:
+            return initialState;
         default:
             return state;
     }

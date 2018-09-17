@@ -12,10 +12,16 @@ export const Button = styled.button`
     background: ${styles.colorMain};
     border-radius: 30px;
     letter-spacing: 2px;
+    -webkit-box-shadow: ${styles.shadowDefault};
+    -moz-box-shadow: ${styles.shadowDefault};
+    box-shadow: ${styles.shadowDefault};
     
     ${props => props.flat && css`
-         color: ${styles.colorMain};
-         background: none;
+        color: ${styles.colorMain};
+        background: none;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
     `}
     
     ${props => props.disabled && css`
@@ -25,6 +31,9 @@ export const Button = styled.button`
     &:hover {
         cursor: pointer;
         background: ${styles.colorMainHighlight};
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
         
         ${props => props.disabled && css`
             opacity: 0.5;

@@ -20,6 +20,10 @@ const Buttons = styled.div`
     button {
         width: calc(50% - 2em);
     }
+    
+    @media only screen and (max-width: 768px) {
+        padding: 0.5em;
+    }
 `;
 
 const Slider = styled.div`

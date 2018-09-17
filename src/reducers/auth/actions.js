@@ -11,3 +11,7 @@ export const setUserData = (user: Object) => ({
     email: user.email,
     id: user.id,
 });
+
+export const resetUserData = () => ({
+    type: types.RESET_USER_DATA,
+});

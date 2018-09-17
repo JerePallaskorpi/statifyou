@@ -1,5 +1,5 @@
 // @flow
-import { SET_USER_DATA } from '../../constants/actionTypes';
+import { SET_USER_DATA, RESET_USER_DATA } from '../../constants/actionTypes';
 
 const initialState = {
     email: null,
@@ -23,6 +23,8 @@ export default (state: State = initialState, action: Action) => {
                 email: action.email,
                 id: action.id,
             };
+        case RESET_USER_DATA:
+            return initialState;
         default:
             return state;
     }

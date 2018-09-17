@@ -1,18 +1,18 @@
-import React from 'react';
-import { Header } from '../../ui/blocks/Header';
+// @flow
+import { connect } from 'react-redux';
+import { resetUserData } from '../../../reducers/auth/actions';
+import Header from './Header';
 
-const HeaderContainer = ({ user, setAccessToken }) => (
-    <Header>
-        <div>
-            <span>Statifyou</span>
-        </div>
-        <div>
-            <span>{user.id ? user.id : ''}</span>
-        </div>
-        <div onClick={() => { setAccessToken(null); window.location = '/'; }}>
-            <span>{user.email && 'Logout'}</span>
-        </div>
-    </Header>
-);
+const mapStateToProps = state => ({
+    user: state.auth.user,
+});
+
+const mapDispatchToProps = dispatch => ({
+    resetUserData: () => {
+        dispatch(resetUserData());
+    },
+});
+
+const HeaderContainer = connect(mapStateToProps, mapDispatchToProps)(Header);
 
 export default HeaderContainer;

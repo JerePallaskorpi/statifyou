@@ -25,12 +25,12 @@ class Home extends Component<Props, null> {
     }
 
     render() {
-        const { accessToken, user, setAccessToken } = this.props;
+        const { accessToken } = this.props;
 
         if (!accessToken) {
             return (
                 <Fragment>
-                    <HeaderContainer user={user} setAccessToken={setAccessToken} />
+                    <HeaderContainer />
                     <Login />
                 </Fragment>
             );
@@ -38,7 +38,7 @@ class Home extends Component<Props, null> {
 
         return (
             <Fragment>
-                <HeaderContainer user={user} setAccessToken={setAccessToken} />
+                <HeaderContainer />
                 <div style={{ maxWidth: '700px', margin: 'auto' }}>
                     <TopListContainer />
                 </div>

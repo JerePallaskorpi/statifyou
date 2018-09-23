@@ -8,71 +8,87 @@ Track your spotify plays.
 
 ### Table of Contents
 
--   [getUserTopList](#getusertoplist)
+-   [getUserData](#getuserdata)
     -   [Parameters](#parameters)
--   [combineUser](#combineuser)
+-   [getHeaders](#getheaders)
+-   [getNewReleases](#getnewreleases)
     -   [Parameters](#parameters-1)
-    -   [Examples](#examples)
--   [Person2](#person2)
-    -   [Properties](#properties)
--   [User](#user)
-    -   [Properties](#properties-1)
--   [tracksInitialIcons](#tracksinitialicons)
+-   [getUserTopList](#getusertoplist)
     -   [Parameters](#parameters-2)
--   [trackPreview](#trackpreview)
+-   [setAccessToken](#setaccesstoken)
     -   [Parameters](#parameters-3)
+-   [setUserData](#setuserdata)
+    -   [Parameters](#parameters-4)
+-   [resetUserData](#resetuserdata)
+-   [tracksInitialIcons](#tracksinitialicons)
+    -   [Parameters](#parameters-5)
+-   [trackPreview](#trackpreview)
+    -   [Parameters](#parameters-6)
+
+## getUserData
+
+Get user's spotify data.
+
+### Parameters
+
+-   `accessToken` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** Authorization token for spotify api.
+
+Returns **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** User's spotify data.
+
+## getHeaders
+
+Creates headers for fetch calls.
+
+Returns **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** Headers data.
+
+## getNewReleases
+
+Get newest spotify releases.
+
+### Parameters
+
+-   `accessToken` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** Authorization token for spotify api.
+
+Returns **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** Data of new releases.
 
 ## getUserTopList
 
-Get user's top artists and tracks
+Get user's top artists and tracks.
 
 ### Parameters
 
--   `accessToken` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** Authorization token
--   `timeRange` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** Time range for query. Can be either short_term, medium_term or long_term.
--   `type` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** Request type (artists or tracks)
+-   `accessToken` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** Authorization token for spotify api.
+-   `timeRange` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** Time range for query.
+    Can be either short_term, medium_term or long_term.
+-   `type` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** Request type for query. Can be either artists or tracks.
 
-Returns **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** Data of users top artists or tracks
+Returns **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** Data of users top artists or tracks.
 
-## combineUser
+## setAccessToken
 
-Combines users name and age.
+Sets spotify access token into redux state.
 
 ### Parameters
 
--   `user` **[User](#user)** Info about the user.
+-   `accessToken` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** Authorization token for spotify api.
 
-### Examples
+Returns **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** Contains type to be used in reducer.
 
-```javascript
-// returns 'Jere 27'
-combineUser({ name: 'Jere', age: 27 })
-```
+## setUserData
 
-Returns **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** Combined users name and age.
+Sets current user's data into redux state.
 
-## Person2
+### Parameters
 
-Person object with name and age.
+-   `user` **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** 
 
-Type: [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)
+Returns **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** Contains type and user data to be used in reducer.
 
-### Properties
+## resetUserData
 
--   `name` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** A person's name.
--   `age` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** A person's age.
--   `ageSum` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** A person's age times 2.
+Resets current user's data from redux state.
 
-## User
-
-User object with name and age.
-
-Type: [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)
-
-### Properties
-
--   `name` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** A person's name.
--   `age` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** A person's age.
+Returns **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** Contains type to be used in reducer.
 
 ## tracksInitialIcons
 

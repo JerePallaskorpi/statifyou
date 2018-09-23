@@ -1,5 +1,6 @@
 // @flow
 import React, { Component } from 'react';
+import { getNewReleases } from '../../../api/new-releases/newReleases';
 import { getUserTopList } from '../../../api/topLists/topList';
 import { trackPreview } from '../../../utils/trackPreview';
 import TopListView from './TopListView';
@@ -91,8 +92,13 @@ class TopList extends Component<Props, State> {
         const { timeRange, type } = this.state.settings;
         const { accessToken } = this.props;
 
-        getUserTopList(accessToken, timeRange, type)
-            .then(r => this.setState({ items: r.items }));
+        if (type !== 'newReleases') {
+            getUserTopList(accessToken, timeRange, type)
+                .then(r => this.setState({ items: r.items }));
+        } else {
+            getNewReleases(this.props.accessToken)
+                .then(r => this.setState({ items: r.albums.items }));
+        }
     };
 
     handlePreviewClick = (id: number) => {
@@ -104,8 +110,6 @@ class TopList extends Component<Props, State> {
 
     render() {
         const { items, settings, playing } = this.state;
-
-        console.log(items);
 
         return (
             <TopListView

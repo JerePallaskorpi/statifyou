@@ -5,6 +5,7 @@ import React, { Fragment } from 'react';
 import TopListSettings from '../../ui/blocks/TopListSettings';
 import { Button } from '../../ui/elements/Button';
 import ArtistSingleView from './artist-single/ArtistSingleView';
+import NewReleasesSingleView from './new-releases/NewReleasesSingleView';
 import { TopListWrapper, TopListOverflow } from './styles';
 import TrackSingleView from './track-single/TrackSingleView';
 
@@ -29,6 +30,7 @@ const TopListView = ({
             <TopListSettings.Buttons>
                 <Button flat={settings.type !== 'artists'} onClick={() => handleTypeClick('artists')}>Artists</Button>
                 <Button flat={settings.type !== 'tracks'} onClick={() => handleTypeClick('tracks')}>Songs</Button>
+                <Button flat={settings.type !== 'newReleases'} onClick={() => handleTypeClick('newReleases')}>New Releases</Button>
             </TopListSettings.Buttons>
             <TopListSettings.Slider>
                 <Slider
@@ -49,6 +51,7 @@ const TopListView = ({
             <TopListWrapper>
                 {items.length > 0 && settings.type === 'tracks' && items.map(item => <TrackSingleView item={item} handlePreviewClick={handlePreviewClick} playing={playing} />)}
                 {items.length > 0 && settings.type === 'artists' && items.map(item => <ArtistSingleView item={item} />)}
+                {items.length > 0 && settings.type === 'newReleases' && items.map(item => <NewReleasesSingleView item={item} />)}
             </TopListWrapper>
         </TopListOverflow>
     </Fragment>
